@@ -69,4 +69,4 @@ Add it to the appropriate chapter's `scenarios` array and add your tag to the `t
 
 ---
 
-_Hallbrook Academy • Model UX Division • Principal Eval does not accept appeals_
+St. Sbice's Academy for Wayward Content Designers • Model UX Division • Principal Eval does not accept appeals\_
