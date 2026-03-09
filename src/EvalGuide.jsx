@@ -328,14 +328,14 @@ export default function EvalGuide() {
   return (
     <div style={{
       fontFamily: "'Georgia', 'Times New Roman', serif",
-      background: "#0a0a0a",
+      background: "#1c1814",
       minHeight: "100vh",
-      color: "#e8e0d0",
+      color: "#f0ebe2",
       padding: "0",
     }}>
       {/* Header */}
       <div style={{
-        background: "linear-gradient(180deg, #1a1208 0%, #0a0a0a 100%)",
+        background: "linear-gradient(180deg, #2a1f0e 0%, #1c1814 100%)",
         borderBottom: "3px solid #8B7355",
         padding: "48px 32px 32px",
         textAlign: "center",
@@ -351,7 +351,7 @@ export default function EvalGuide() {
           fontSize: "11px", letterSpacing: "4px", color: "#8B7355",
           textTransform: "uppercase", marginBottom: "12px", fontFamily: "sans-serif",
         }}>
-          HALLBROOK ACADEMY • OFFICIAL PUBLICATION
+          ST. SBICE'S ACADEMY FOR WAYWARD CONTENT DESIGNERS • OFFICIAL PUBLICATION
         </div>
         <h1 style={{
           fontSize: "clamp(28px, 5vw, 52px)", fontWeight: "900",
@@ -363,10 +363,10 @@ export default function EvalGuide() {
           <span style={{ color: "#d4a853" }}>Uniform Violations</span>
         </h1>
         <p style={{
-          fontSize: "16px", color: "#a89880", margin: "16px auto 0",
-          maxWidth: "500px", fontStyle: "italic", lineHeight: 1.6,
+          fontSize: "16px", color: "#cfc4b0", margin: "16px auto 0",
+          maxWidth: "720px", fontStyle: "italic", lineHeight: 1.6,
         }}>
-          A definitive handbook for understanding why perfectly compliant students<br />still end up in the principal's office — and what that has to do with your AI evals.
+          A definitive handbook for understanding why perfectly compliant students still end up in the principal's office — and what that has to do with your AI evals.
         </p>
         <div style={{
           marginTop: "24px", fontSize: "11px", letterSpacing: "2px",
@@ -391,7 +391,7 @@ export default function EvalGuide() {
                 width: "100%",
                 background: expandedChapter === chapter.id
                   ? `linear-gradient(135deg, ${chapter.color} 0%, ${chapter.color}cc 100%)`
-                  : "rgba(255,255,255,0.03)",
+                  : "rgba(255,255,255,0.05)",
                 border: `1px solid ${expandedChapter === chapter.id ? chapter.accent + "44" : "rgba(255,255,255,0.08)"}`,
                 borderLeft: `4px solid ${chapter.accent}`,
                 borderRadius: "4px",
@@ -413,7 +413,7 @@ export default function EvalGuide() {
                   <div style={{ fontSize: "20px", fontWeight: "bold", fontStyle: "italic" }}>
                     {chapter.title}
                   </div>
-                  <div style={{ fontSize: "13px", color: "#a89880", marginTop: "2px" }}>
+                  <div style={{ fontSize: "13px", color: "#c4b89a", marginTop: "2px" }}>
                     {chapter.subtitle}
                   </div>
                 </div>
@@ -440,7 +440,7 @@ export default function EvalGuide() {
                     key={scenario.id}
                     onClick={() => openScenario(chapter.id, scenario.id)}
                     style={{
-                      background: "rgba(255,255,255,0.02)",
+                      background: "rgba(255,255,255,0.05)",
                       border: "1px solid rgba(255,255,255,0.08)",
                       borderRadius: "4px",
                       padding: "20px",
@@ -476,7 +476,7 @@ export default function EvalGuide() {
                       {scenario.title}
                     </div>
                     <div style={{
-                      fontSize: "12px", color: "#a89880", marginTop: "8px", lineHeight: 1.5,
+                      fontSize: "12px", color: "#c4b89a", marginTop: "8px", lineHeight: 1.5,
                     }}>
                       {scenario.setup.length > 100 ? scenario.setup.slice(0, 100) + "..." : scenario.setup}
                     </div>
@@ -509,7 +509,7 @@ export default function EvalGuide() {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: "#111008",
+              background: "#221e18",
               border: `1px solid ${active.chapter.accent}33`,
               borderLeft: `4px solid ${active.chapter.accent}`,
               borderRadius: "6px",
@@ -565,7 +565,7 @@ export default function EvalGuide() {
                   {label}
                 </div>
                 <div style={{
-                  fontSize: "15px", lineHeight: "1.7", color: "#d4cabb",
+                  fontSize: "15px", lineHeight: "1.7", color: "#e8e0d0",
                   borderLeft: `2px solid ${color}33`, paddingLeft: "16px",
                 }}>
                   {content}
@@ -584,7 +584,7 @@ export default function EvalGuide() {
         fontSize: "11px", letterSpacing: "2px",
         color: "#4a3f32", fontFamily: "sans-serif", textTransform: "uppercase",
       }}>
-        Hallbrook Academy • Model UX Division • Principal Eval does not accept appeals
+        St. Sbice's Academy for Wayward Content Designers • Model UX Division • Principal Eval does not accept appeals
       </div>
     </div>
   );
