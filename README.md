@@ -1,21 +1,22 @@
 # The Complete Guide to Uniform Violations
+
 ### AI Evals, explained through a school dress code
 
 An interactive reference guide for understanding how AI evaluation systems work, fail, and can be improved — built for non-technical stakeholders using the extended metaphor of a school uniform policy.
 
-**Live site:** *(add your Vercel URL here after deploying)*
+**Live site:** *https://eval-guide.vercel.app/*
 
 ---
 
 ## The Metaphor
 
-| School | Evals |
-|---|---|
-| Student | Model output |
-| Uniform | The response being evaluated |
-| Principal Eval | The evaluator (automated or human) |
-| The Handbook | The eval rubric |
-| Student's rules copy | Model system instructions |
+| School               | Evals                              |
+| -------------------- | ---------------------------------- |
+| Student              | Model output                       |
+| Uniform              | The response being evaluated       |
+| Principal Eval       | The evaluator (automated or human) |
+| The Handbook         | The eval rubric                    |
+| Student's rules copy | Model system instructions          |
 
 ---
 
@@ -68,4 +69,4 @@ Add it to the appropriate chapter's `scenarios` array and add your tag to the `t
 
 ---
 
-*Hallbrook Academy • Model UX Division • Principal Eval does not accept appeals*
+_Hallbrook Academy • Model UX Division • Principal Eval does not accept appeals_
