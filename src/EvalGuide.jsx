@@ -416,7 +416,152 @@ export default function EvalGuide() {
           marginTop: "24px", fontSize: "11px", letterSpacing: "2px",
           color: "#6b5d4f", fontFamily: "sans-serif", textTransform: "uppercase",
         }}>
-          ✦ Select a chapter to begin ✦
+          ✦ Start with the cast, then select a chapter ✦
+        </div>
+      </div>
+
+      {/* Cast of Characters */}
+      <div style={{
+        maxWidth: "1100px",
+        margin: "0 auto",
+        padding: "32px 32px 0",
+      }}>
+        <div style={{
+          background: "rgba(212, 168, 83, 0.06)",
+          border: "1px solid rgba(212, 168, 83, 0.2)",
+          borderLeft: "4px solid #d4a853",
+          borderRadius: "4px",
+          overflow: "hidden",
+        }}>
+          <button
+            onClick={() => setExpandedChapter(expandedChapter === "cast" ? null : "cast")}
+            style={{
+              width: "100%",
+              background: "none",
+              border: "none",
+              padding: "20px 24px",
+              cursor: "pointer",
+              textAlign: "left",
+              color: "#f0ebe2",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div style={{
+                fontSize: "10px", letterSpacing: "3px", color: "#d4a853",
+                fontFamily: "sans-serif", textTransform: "uppercase", marginBottom: "4px",
+              }}>
+                Before You Start
+              </div>
+              <div style={{ fontSize: "20px", fontWeight: "bold", fontStyle: "italic" }}>
+                The Cast of Characters
+              </div>
+              <div style={{ fontSize: "13px", color: "#c4b89a", marginTop: "2px" }}>
+                These are different things. They live in different places. That matters.
+              </div>
+            </div>
+            <div style={{
+              fontSize: "12px", fontFamily: "sans-serif", color: "#6b5d4f",
+              transition: "transform 0.2s",
+              transform: expandedChapter === "cast" ? "rotate(90deg)" : "rotate(0deg)",
+            }}>▶</div>
+          </button>
+
+          {expandedChapter === "cast" && (
+            <div style={{ padding: "0 24px 28px" }}>
+              <p style={{
+                fontSize: "15px", lineHeight: "1.7", color: "#c4b89a",
+                fontStyle: "italic", marginBottom: "24px", maxWidth: "680px",
+              }}>
+                Everything in this guide uses a school uniform as a stand-in for an AI pipeline. Before you read the scenarios, it helps to know who's who — and more importantly, that these are <em style={{ color: "#f0ebe2" }}>separate things</em> that live in separate places. When something goes wrong, it matters a great deal which one is broken.
+              </p>
+
+              <table style={{
+                width: "100%", borderCollapse: "collapse",
+                fontSize: "14px", fontFamily: "sans-serif",
+              }}>
+                <thead>
+                  <tr>
+                    <th style={{
+                      textAlign: "left", padding: "10px 16px",
+                      fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase",
+                      color: "#d4a853", borderBottom: "1px solid rgba(212,168,83,0.2)",
+                      fontWeight: "normal",
+                    }}>At St. Sbice's</th>
+                    <th style={{
+                      textAlign: "left", padding: "10px 16px",
+                      fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase",
+                      color: "#d4a853", borderBottom: "1px solid rgba(212,168,83,0.2)",
+                      fontWeight: "normal",
+                    }}>In Your AI Pipeline</th>
+                    <th style={{
+                      textAlign: "left", padding: "10px 16px",
+                      fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase",
+                      color: "#d4a853", borderBottom: "1px solid rgba(212,168,83,0.2)",
+                      fontWeight: "normal",
+                    }}>Why It Matters</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      school: "👤 The student",
+                      ai: "The model's response",
+                      why: "This is the output — what the model actually said. It's the thing being judged.",
+                    },
+                    {
+                      school: "👔 The uniform",
+                      ai: "The response being evaluated",
+                      why: "The specific output under review. One student, one outfit, one response at a time.",
+                    },
+                    {
+                      school: "🏫 Principal Eval",
+                      ai: "The evaluator (LLM judge or human rater)",
+                      why: "The entity doing the judging. Can be a model, a human, or both. Not infallible.",
+                    },
+                    {
+                      school: "📖 The handbook",
+                      ai: "The eval rubric",
+                      why: "The written criteria Principal Eval uses to make decisions. Only as good as what's written in it.",
+                    },
+                    {
+                      school: "📋 Student's copy of the rules",
+                      ai: "The model's system prompt / instructions",
+                      why: "What the model was told to do. Separate from how it's being evaluated. Both can be wrong independently.",
+                    },
+                    {
+                      school: "📸 The reference photo",
+                      ai: "Ground truth",
+                      why: "What a correct answer looks like. If it's stale, everything measured against it is unreliable.",
+                    },
+                  ].map(({ school, ai, why }, i) => (
+                    <tr key={i} style={{
+                      borderBottom: "1px solid rgba(255,255,255,0.05)",
+                      background: i % 2 === 0 ? "rgba(255,255,255,0.02)" : "transparent",
+                    }}>
+                      <td style={{ padding: "12px 16px", color: "#f0ebe2", fontStyle: "italic" }}>{school}</td>
+                      <td style={{ padding: "12px 16px", color: "#d4a853" }}>{ai}</td>
+                      <td style={{ padding: "12px 16px", color: "#c4b89a", lineHeight: 1.5 }}>{why}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <div style={{
+                marginTop: "20px",
+                padding: "16px",
+                background: "rgba(255,255,255,0.03)",
+                borderLeft: "2px solid #d4a85333",
+                borderRadius: "2px",
+              }}>
+                <p style={{ fontSize: "13px", color: "#c4b89a", lineHeight: 1.7, margin: 0 }}>
+                  <span style={{ color: "#d4a853", fontWeight: "bold" }}>The most important thing to understand:</span> when a bad response reaches a user, the instinct is to blame the model. But the model, the rubric, the evaluator, the instructions, and the ground truth are all separate moving parts — and any one of them can be the actual problem. This guide is about learning to tell the difference.
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
